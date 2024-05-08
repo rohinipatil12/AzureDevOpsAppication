@@ -38,13 +38,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
-- checkout: self
-  persistCredentials: true
-- bash: |
-    git config --global user.email "rohinipatild36@gmail.com"
-    git config --global user.name "Rohini Patil"
-  displayName: set up Git user
-- bash: 
-    git push origin HEAD:'https://dev.azure.com/v-rohinipatil/Azure%20Devops/_git/AzureDevOpsApplication.git'
-  workingDirectory: $(Build.SourcesDirectory)
